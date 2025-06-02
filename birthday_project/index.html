@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Send Me a Birthday Gift!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday to Me!</h1>
+        <div class="media-gallery">
+            <!-- Your photos/videos here -->
+            <img src="media/Gamer.jpg" alt="Birthday Photo 1">
+            <img src="media/Gamer.jpg" alt="Birthday Photo 2">
+            <video controls>
+                <source src="media/video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="gift-instructions">
+    <h2>Send Your Gift via M-Pesa</h2>
+    <p>
+        <strong>Send to: 0799896276</strong><br>
+        <button onclick="copyNumber()">Copy Number</button>
+        <button onclick="openMpesa()">Open M-Pesa Send Money</button>
+    </p>
+    <div id="copyStatus" style="color:green;"></div>
+</div>
+<script>
+function copyNumber() {
+    const phoneNumber = '0799896276';
+    navigator.clipboard.writeText(phoneNumber)
+        .then(() => {
+            document.getElementById('copyStatus').innerText = "Number copied!";
+        })
+        .catch(() => {
+            document.getElementById('copyStatus').innerText = "Failed to copy.";
+        });
+}
+function openMpesa() {
+    window.location.href = "tel:*234*1*1*799896276*";
+}
+</script>
+</body>
+</html>
